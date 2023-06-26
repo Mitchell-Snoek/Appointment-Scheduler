@@ -1,0 +1,253 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using Tick_Tack_Toe.Models;
+
+namespace Tick_Tack_Toe.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+        private string win = "";
+        private bool draw = false;
+        private int playerCount = 1;
+        private string player = "";
+        
+        //Start button values
+        private string but1 = "";
+        private string but2 = "";
+        private string but3 = "";
+        private string but4 = "";
+        private string but5 = "";
+        private string but6 = "";
+        private string but7 = "";
+        private string but8 = "";
+        private string but9 = "";
+        //End button values
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        //Start buttons
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (playerCount % 2 == 0)
+            {
+                player = "O";
+            }
+            else
+            {
+                player = "X";
+            }
+            playerCount++;
+            but1 = player;
+            ViewBag.button1 = player;
+            Check_win();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if (playerCount % 2 == 0)
+            {
+                player = "O";
+            }
+            else
+            {
+                player = "X";
+            }
+            playerCount++;
+            but2 = player;
+            ViewBag.button2 = player;
+            Check_win();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            if (playerCount % 2 == 0)
+            {
+                player = "O";
+            }
+            else
+            {
+                player = "X";
+            }
+            playerCount++;
+            but3 = player;
+            ViewBag.button3 = player;
+            Check_win();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            if (playerCount % 2 == 0)
+            {
+                player = "O";
+            }
+            else
+            {
+                player = "X";
+            }
+            playerCount++;
+            but4 = player;
+            ViewBag.button4 = player;
+            Check_win();
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            if (playerCount % 2 == 0)
+            {
+                player = "O";
+            }
+            else
+            {
+                player = "X";
+            }
+            playerCount++;
+            but5 = player;
+            ViewBag.button5 = player;
+            Check_win();
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            if (playerCount % 2 == 0)
+            {
+                player = "O";
+            }
+            else
+            {
+                player = "X";
+            }
+            playerCount++;
+            but6 = player;
+            ViewBag.button6 = player;
+            Check_win();
+        }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            if (playerCount % 2 == 0)
+            {
+                player = "O";
+            }
+            else
+            {
+                player = "X";
+            }
+            playerCount++;
+            but7 = player;
+            ViewBag.button7 = player;
+            Check_win();
+        }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            if (playerCount % 2 == 0)
+            {
+                player = "O";
+            }
+            else
+            {
+                player = "X";
+            }
+            playerCount++;
+            but8 = player;
+            ViewBag.button8 = player;
+            Check_win();
+        }
+
+        private void Button9_Click(object sender, EventArgs e)
+        {
+            if (playerCount % 2 == 0)
+            {
+                player = "O";
+            }
+            else
+            {
+                player = "X";
+            }
+            playerCount++;
+            but9 = player;
+            ViewBag.button9 = player;
+            Check_win();
+        }
+        //End buttons
+
+        //Check for win
+        private void Check_win()
+        {
+            //check win voor X
+            //horizontaal win voor X
+            if (but1 == "X" && but2 == "X" && but3 == "X" || but4 == "X" && but5 == "X" && but6 == "X" || but4 == "X" && but5 == "X" && but6 == "X")
+            {
+                win = "X";
+            }
+            //verticaal win voor X
+            else if (but1 == "X" && but4 == "X" && but7 == "X" || but2 == "X" && but5 == "X" && but8 == "X" || but3 == "X" && but6 == "X" && but9 == "X")
+            {
+                win = "X";
+            }
+            //schuin win voor X
+            else if (but1 == "X" && but5 == "X" && but9 == "X" || but3 == "X" && but5 == "X" && but7 == "X")
+            {
+                win = "X";
+            }
+            //check win voor O
+            //horizontaal win voor O
+            else if (but1 == "O" && but2 == "O" && but3 == "O" || but4 == "O" && but5 == "O" && but6 == "O" || but4 == "O" && but5 == "O" && but6 == "O")
+            {
+                win = "O";
+            }
+            //verticaal win voor O
+            else if (but1 == "O" && but4 == "O" && but7 == "O" || but2 == "O" && but5 == "O" && but8 == "O" || but3 == "O" && but6 == "O" && but9 == "O")
+            {
+                win = "O";
+            }
+            //schuin win voor O
+            else if (but1 == "O" && but5 == "O" && but9 == "O" || but3 == "O" && but5 == "O" && but7 == "O")
+            {
+                win = "O";
+            }
+            else if (but1 != null && but2 != null && but3 != null && but4 != null && but5 != null && but6 != null && but7 != null && but8 != null && but9 != null)
+            {
+                draw = true;
+            }
+            else
+            {
+                draw = false;
+            }
+
+            if (win != null)
+            {
+                ViewBag.win = win;
+            }
+            else if (draw == true)
+            {
+                ViewBag.win = "draw";
+            }
+            else
+            {
+                ViewBag.win = "";
+            }
+        }
+
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}

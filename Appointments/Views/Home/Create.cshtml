@@ -1,0 +1,45 @@
+﻿@model Appointments.Models.Appointment
+
+@{
+    ViewData["Title"] = "Create Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Create a new appointment</h1>
+</div>
+
+
+<div class="myform">
+        <form asp-action="Create" method="post">
+            <div  class="myforma">
+                <label asp-for="Title" class="" ><h4>Title</h4></label>
+                <br />
+                <input asp-for="Title" placeholder="title..." />
+            </div>
+            <br />
+            <div class="myforma">
+                <label asp-for="Description"><h4>Description</h4></label>
+                <br />
+                <input asp-for="Description" placeholder="description..."/>
+            </div>
+            <br />
+            <div class="myforma">
+                <label asp-for="BeginDate"><h4>BeginDate</h4></label>
+                <br />
+                <input asp-for="BeginDate" />
+            </div>
+            <br />
+            <div class="myforma">
+                <label asp-for="EndDate"><h4>EndDate</h4></label>
+                <br />
+                <input asp-for="EndDate" />
+            </div>
+            <br />
+            <div>
+               <p></p>
+            <button type="submit">Submit form</button>
+             <p></p>
+        </div>
+
+        </form>
+    </div>

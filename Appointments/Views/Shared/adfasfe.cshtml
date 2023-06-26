@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var win = ViewBag.win;
+    var button1 = ViewBag.button1;
+    var button2 = ViewBag.button2;
+    var button3 = ViewBag.button3;
+    var button4 = ViewBag.button4;
+    var button5 = ViewBag.button5;
+    var button6 = ViewBag.button6;
+    var button7 = ViewBag.button7;
+    var button8 = ViewBag.button8;
+    var button9 = ViewBag.button9;
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+<p>@win</p>
+<p>@button1</p>
+
+<div style="text-align: center;">
+    <div>
+        <button runat="server" onserverclick="Button1_Click" title="button1" type="submit" name="button1" style="height: 100px; width: 100px;">@button1</button>
+        <button runat="server" onserverclick="Button2_Click" title="button2" type="submit" name="button2" style="height: 100px; width: 100px;">@button2</button>
+        <button runat="server" onserverclick="Button3_Click" title="button3" type="submit" name="button3" style="height: 100px; width: 100px;">@button3</button>
+    </div>
+    <div style="margin-bottom: 5px; margin-top: 5px;">
+        <button runat="server" onserverclick="Button4_Click" title="button4" type="submit" name="button4" style="height: 100px; width: 100px;">@button4</button>
+        <button runat="server" onserverclick="Button5_Click" title="button5" type="submit" name="button5" style="height: 100px; width: 100px;">@button5</button>
+        <button runat="server" onserverclick="Button6_Click" title="button6" type="submit" name="button6" style="height: 100px; width: 100px;">@button6</button>
+    </div>
+    <div>
+        <button runat="server" onserverclick="Button7_Click" title="button7" type="submit" name="button7" style="height: 100px; width: 100px;">@button7</button>
+        <button runat="server" onserverclick="Button8_Click" title="button8" type="submit" name="button8" style="height: 100px; width: 100px;">@button8</button>
+        <button runat="server" onserverclick="Button9_Click" title="button9" type="submit" name="button9" style="height: 100px; width: 100px;">@button9</button>
+    </div>
+</div>
